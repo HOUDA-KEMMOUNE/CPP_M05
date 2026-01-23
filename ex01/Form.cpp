@@ -80,7 +80,7 @@ Form	&Form::operator=( const Form &old )
 	return (*this);
 }
 
-std::string	Form::getName( void ) const
+const std::string	&Form::getName( void ) const
 {
 	return (name);
 }
@@ -102,11 +102,6 @@ int	Form::getExecGrade( void ) const
 
 void				Form::beSigned( const Bureaucrat &slave )
 {
-	// if (bureaucrat_grade > required_grade)
-	// 	throw Form::GradeTooLowException();
-	// else
-	// 	return ;
-
 	if (slave.getGrade() > signGrade)
 		throw Form::GradeTooLowException();
 	else

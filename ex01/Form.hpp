@@ -25,10 +25,10 @@ class	Form
 		Form	&operator=( const Form &old );
 		~Form( void );
 
-		std::string	getName( void ) const;
+		const std::string	&getName( void ) const;
 		bool				getSign( void ) const;
-		int			getSignGrade( void ) const;
-		int			getExecGrade( void ) const;
+		int					getSignGrade( void ) const;
+		int					getExecGrade( void ) const;
 
 		void				beSigned( const Bureaucrat &slave );
 
