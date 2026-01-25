@@ -10,7 +10,7 @@ class	Bureaucrat;
 #include <iostream>
 
 
-class	Form
+class	AForm
 {
 	private:
 		const std::string	name;
@@ -19,18 +19,20 @@ class	Form
 		const int			execGrade;
 	
 	public:
-		Form( void );
-		Form( std::string n, const int sg, const int eg );
-		Form( const Form &old );
-		Form	&operator=( const Form &old );
-		~Form( void );
+		AForm( void );
+		AForm( std::string n, const int sg, const int eg );
+		AForm( const int sg, const int eg );
+		AForm( const AForm &old );
+		AForm	&operator=( const AForm &old );
+		~AForm( void );
 
 		const std::string	&getName( void ) const;
 		bool				getSign( void ) const;
 		int					getSignGrade( void ) const;
 		int					getExecGrade( void ) const;
 
-		virtual	void		beSigned( const Bureaucrat &slave ) = 0;
+		void				beSigned( const Bureaucrat &slave );
+		virtual void		execute( const Bureaucrat &slave ) = 0;
 
 		class	GradeTooHighException : public std::exception
 		{
@@ -43,7 +45,7 @@ class	Form
 		};
 };
 
-std::ostream	&operator<<( std::ostream &out, const Form &form );
+std::ostream	&operator<<( std::ostream &out, const AForm &form );
 void			check_grades( int signGrade, int execGrade );
 void			compare_status( int bureaucrat_grade, int required_grade );
 
