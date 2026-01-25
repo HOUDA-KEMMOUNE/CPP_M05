@@ -7,6 +7,8 @@ ShrubberyCreationForm::ShrubberyCreationForm( const std::string &t )
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm &old )
+	: AForm(145, 137)
+
 {
 	*this = old;
 }

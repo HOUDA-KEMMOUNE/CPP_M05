@@ -7,6 +7,7 @@ RobotomyRequestForm::RobotomyRequestForm( const std::string &t )
 }
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm &old )
+: AForm(72, 45)
 {
 	*this = old;
 }
