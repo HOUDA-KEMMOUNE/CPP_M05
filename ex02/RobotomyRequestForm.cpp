@@ -18,4 +18,19 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=( const RobotomyRequestForm &
 	return (*this);
 }
 
+void		RobotomyRequestForm::execute( const Bureaucrat &slave )
+{
+	(void)slave;
+
+	std::cout << "Drilling noises...\n";
+	int		r = rand();
+	// <target> has been robotomized successfully
+	// Robotomy on <target> failed
+
+	if (r / 2 == 0)
+		std::cout << target << " has been robotomized successfully\n";
+	else
+		std::cout << "Robotomy on " << target << " failed\n";
+}
+
 RobotomyRequestForm::~RobotomyRequestForm( void ) {}

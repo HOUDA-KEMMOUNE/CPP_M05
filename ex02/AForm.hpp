@@ -8,7 +8,10 @@ class	Bureaucrat;
 #include <string>
 #include <exception>
 #include <iostream>
+#include <cstdlib>
 
+#include <ctime>
+#include <cstdlib>
 
 class	AForm
 {
@@ -24,7 +27,7 @@ class	AForm
 		AForm( const int sg, const int eg );
 		AForm( const AForm &old );
 		AForm	&operator=( const AForm &old );
-		~AForm( void );
+		virtual ~AForm( void );
 
 		const std::string	&getName( void ) const;
 		bool				getSign( void ) const;

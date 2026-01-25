@@ -32,37 +32,23 @@ void		check_file( const std::ofstream &file )
 
 void		draw_tree( std::ofstream &file )
 {
-	file << "   /\    \n";
-	file << "  /**\   \n";
-	file << " /****\  \n";
-	file << "   ||    \n";
+	int	i = 0;
 
-	std::cout << std::endl;
+	while (i < 5)
+	{
+		file << "   /\\    \n";
+		file << "  /**\\   \n";
+		file << " /****\\  \n";
+		file << "   ||    \n";
 
-	file << "   /\    \n";
-	file << "  /**\   \n";
-	file << " /****\  \n";
-	file << "   ||    \n";
-
-	std::cout << std::endl;
-
-	file << "   /\    \n";
-	file << "  /**\   \n";
-	file << " /****\  \n";
-	file << "   ||    \n";
-
-	std::cout << std::endl;
-
-	file << "   /\    \n";
-	file << "  /**\   \n";
-	file << " /****\  \n";
-	file << "   ||    \n";
-
-	std::cout << std::endl;
+		file << std::endl;
+		i++;
+	}
 }
 
 void		        ShrubberyCreationForm::execute( const Bureaucrat &slave )
 {
+	(void)slave;
 	std::string		file;
 	
 	file = target + "_shrubbery ";
@@ -76,6 +62,7 @@ void		        ShrubberyCreationForm::execute( const Bureaucrat &slave )
 		std::cerr << file << ": does not exist :/\n";
 	}
 	draw_tree(file_);
+	// close()
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm( void ) {}
