@@ -17,3 +17,5 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=( const RobotomyRequestForm &
 		target = old.target;
 	return (*this);
 }
+
+RobotomyRequestForm::~RobotomyRequestForm( void ) {}
