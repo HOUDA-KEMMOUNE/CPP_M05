@@ -50,21 +50,17 @@ void		draw_tree( std::ofstream &file )
 
 void		        ShrubberyCreationForm::execute( const Bureaucrat &slave )
 {
-	(void)slave;
+	if (!this->getSign())
+		throw	AForm::GradeTooLowException();
+	if (slave.getGrade() > 137)
+		throw	AForm::GradeTooLowException();
 	std::string		file;
 	
-	file = target + "_shrubbery ";
+	file = target + "_shrubbery";
 	std::ofstream	file_(file.c_str());
-	try
-	{
-		check_file(file_);
-	}
-	catch(...)
-	{
-		std::cerr << file << ": does not exist :/\n";
-	}
+	if (!file_.is_open())
+		throw	AForm::GradeTooLowException();
 	draw_tree(file_);
-	// close()
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm( void ) {}

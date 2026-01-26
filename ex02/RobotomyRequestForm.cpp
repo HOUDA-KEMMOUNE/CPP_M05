@@ -23,16 +23,13 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=( const RobotomyRequestForm &
 
 void		RobotomyRequestForm::execute( const Bureaucrat &slave )
 {
-	(void)slave;
-	
-	// slave.signForm()
+	if (!this->getSign())
+		throw	AForm::GradeTooLowException();
+	if (slave.getGrade() > 45)
+		throw	AForm::GradeTooLowException();
 
 	std::cout << "Drilling noises...\n";
 	int		r = rand();
-	// <target> has been robotomized successfully
-	// Robotomy on <target> failed
-
-
 	if (r % 2 == 0)
 		std::cout << target << " has been robotomized successfully\n";
 	else

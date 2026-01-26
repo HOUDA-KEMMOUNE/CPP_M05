@@ -1,8 +1,8 @@
 NAME = Form
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-# SRC =  $(shell ls | grep '\.cpp')
-SRC =  AForm.cpp Bureaucrat.cpp main.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRC =  $(shell ls | grep '\.cpp')
+# SRC =  AForm.cpp Bureaucrat.cpp main.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME) clean

@@ -21,22 +21,10 @@ PresidentialPardonForm	&PresidentialPardonForm::operator=( const PresidentialPar
 
 void		PresidentialPardonForm::execute( const Bureaucrat &slave )
 {
-	try
-	{
-		check_slave(slave, 25);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	try
-	{
-		check_slave(slave, 5);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	if (!this->getSign())
+		throw	AForm::GradeTooLowException();
+	if (slave.getGrade() > 5)
+		throw	AForm::GradeTooLowException();
 	std::cout << "<target> has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
 
