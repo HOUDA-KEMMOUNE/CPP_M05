@@ -48,11 +48,11 @@ void		draw_tree( std::ofstream &file )
 	}
 }
 
-void		        ShrubberyCreationForm::execute( const Bureaucrat &slave )
+void		        ShrubberyCreationForm::execute( const Bureaucrat &executor ) const
 {
 	if (!this->getSign())
 		throw	AForm::GradeTooLowException();
-	if (slave.getGrade() > 137)
+	if (executor.getGrade() > 137)
 		throw	AForm::GradeTooLowException();
 	std::string		file;
 	

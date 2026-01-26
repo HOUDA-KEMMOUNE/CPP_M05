@@ -21,11 +21,11 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=( const RobotomyRequestForm &
 	return (*this);
 }
 
-void		RobotomyRequestForm::execute( const Bureaucrat &slave )
+void		RobotomyRequestForm::execute( const Bureaucrat &executor ) const
 {
 	if (!this->getSign())
 		throw	AForm::GradeTooLowException();
-	if (slave.getGrade() > 45)
+	if (executor.getGrade() > 45)
 		throw	AForm::GradeTooLowException();
 
 	std::cout << "Drilling noises...\n";
