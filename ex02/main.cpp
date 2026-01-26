@@ -6,12 +6,12 @@
 
 int	main()
 {
-	// srand(time(NULL));
-	Bureaucrat	slave(80, "Slave");
+	srand(time(NULL));
+	Bureaucrat	slave(146, "Slave");
 	ShrubberyCreationForm	tree("Home");
 	RobotomyRequestForm		robot("Forest");
 
-	// tree.execute(slave);
+	tree.execute(slave);
 	robot.execute(slave);
 	// robot.execute(slave);
 

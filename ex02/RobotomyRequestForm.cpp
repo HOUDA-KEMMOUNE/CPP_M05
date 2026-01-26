@@ -1,4 +1,6 @@
 #include "RobotomyRequestForm.hpp"
+#include "Bureaucrat.hpp"
+
 
 RobotomyRequestForm::RobotomyRequestForm( const std::string &t )
 	: AForm(72, 45)
@@ -22,13 +24,16 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=( const RobotomyRequestForm &
 void		RobotomyRequestForm::execute( const Bureaucrat &slave )
 {
 	(void)slave;
+	
+	// slave.signForm()
 
 	std::cout << "Drilling noises...\n";
 	int		r = rand();
 	// <target> has been robotomized successfully
 	// Robotomy on <target> failed
 
-	if (r / 2 == 0)
+
+	if (r % 2 == 0)
 		std::cout << target << " has been robotomized successfully\n";
 	else
 		std::cout << "Robotomy on " << target << " failed\n";
