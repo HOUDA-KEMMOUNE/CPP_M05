@@ -120,6 +120,14 @@ void				AForm::beSigned( const Bureaucrat &slave )
 		signed_ = true;
 }
 
+void			check_slave( const Bureaucrat &slave, int sg )
+{
+	if (slave.getGrade() > sg)
+		throw	AForm::GradeTooLowException();
+	else
+		return ;
+}
+
 std::ostream	&operator<<( std::ostream &out, const AForm &form )
 {
 	out << "AForm " << form.getName() << " | signed: ";

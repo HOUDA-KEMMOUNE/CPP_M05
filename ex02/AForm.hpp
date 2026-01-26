@@ -51,5 +51,6 @@ class	AForm
 std::ostream	&operator<<( std::ostream &out, const AForm &form );
 void			check_grades( int signGrade, int execGrade );
 void			compare_status( int bureaucrat_grade, int required_grade );
+void			check_slave( const Bureaucrat &slave, int sg );
 
 # endif
