@@ -18,6 +18,6 @@ clean:
 	@rm -rf $(OBJ) && clear
 
 fclean: clean
-	@rm -rf $(NAME) && rm *_shrubbery
+	@rm -rf $(NAME)
 
 re: fclean all
