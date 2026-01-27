@@ -13,60 +13,42 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 	return "Your grade is too low :/";
 }
 
-Bureaucrat::Bureaucrat( void )
-{
-	// grade = 0;
-	try
-	{
-		throw ""; 
-	}
-	catch(...)
-	{
-		std::cerr << "The Bureaucrat has no grade :/" << '\n';
-	}
-}
-
 Bureaucrat::Bureaucrat( int grade_, std::string name_) : name(name_)
 {
-	try
+	if (grade_ <= 0)
 	{
-		check_grade(grade_);
+		throw	Bureaucrat::GradeTooHighException();
 	}
-	catch(const std::exception& e)
+	else if (grade_ > 150)
 	{
-		std::cerr << e.what() << '\n';
-		// return ;
+		throw	Bureaucrat::GradeTooLowException();
 	}
 	grade = grade_;
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat &old )
 {
+	if (old.grade <= 0)
+		throw	Bureaucrat::GradeTooHighException();
+	else if (grade > 150)
+		throw	Bureaucrat::GradeTooLowException();
 	*this = old;
-	try
-	{
-		check_grade(old.grade);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
 }
 
 Bureaucrat	&Bureaucrat::operator=( const Bureaucrat &old )
 {
 	if (this != &old)
+	{
+		if (old.grade <= 0)
+			throw	Bureaucrat::GradeTooHighException();
+		else if (grade > 150)
+			throw	Bureaucrat::GradeTooLowException();
 		grade = old.grade;
-	try
-	{
-		check_grade(grade);
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	
 	return (*this);
 }
+
 
 const std::string	Bureaucrat::getName( void ) const
 {
