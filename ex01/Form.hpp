@@ -19,7 +19,6 @@ class	Form
 		const int			execGrade;
 	
 	public:
-		Form( void );
 		Form( std::string n, const int sg, const int eg );
 		Form( const Form &old );
 		Form	&operator=( const Form &old );

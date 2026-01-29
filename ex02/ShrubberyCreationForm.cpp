@@ -1,14 +1,13 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm( const std::string &t )
-	: AForm(145, 137)
+: AForm("ShrubberyCreationForm", 25, 5)
 {
 	target = t;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm &old )
-	: AForm(145, 137)
-
+: AForm("ShrubberyCreationForm", 25, 5)
 {
 	*this = old;
 }

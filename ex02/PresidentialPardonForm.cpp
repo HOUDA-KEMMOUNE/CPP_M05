@@ -1,13 +1,13 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm( const std::string &t )
-: AForm(25, 5)
+: AForm("PresidentialPardonForm", 25, 5)
 {
 	target = t;
 }
 
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm &old )
-: AForm(25, 5)
+: AForm("PresidentialPardonForm", 25, 5)
 {
 	*this = old;
 }

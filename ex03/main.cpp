@@ -6,9 +6,9 @@
 
 int main()
 {
-    Intern someRandomIntern; 
-    AForm* rrf;
-    rrf = someRandomIntern.makeForm("shrubbery creation", "Bender"); 
-
+    Intern someRandomIntern;
+    AForm* form;
+    form = someRandomIntern.makeForm("shrubbery creation", "Bender"); 
+    delete form;
     return 0;
 }

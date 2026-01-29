@@ -11,7 +11,6 @@ class	Bureaucrat;
 #include <cstdlib>
 
 #include <ctime>
-#include <cstdlib>
 
 class	AForm
 {
@@ -22,9 +21,7 @@ class	AForm
 		const int			execGrade;
 	
 	public:
-		AForm( void );
 		AForm( std::string n, const int sg, const int eg );
-		AForm( const int sg, const int eg );
 		AForm( const AForm &old );
 		AForm	&operator=( const AForm &old );
 		virtual ~AForm( void );

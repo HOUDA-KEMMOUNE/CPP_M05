@@ -33,42 +33,16 @@ void			compare_status( int bureaucrat_grade, int required_grade )
 
 }
 
-Form::Form( void ) : name(""), signed_(false), signGrade(0), execGrade(0)
-{
-	try
-	{
-		throw "";
-	}
-	catch(...)
-	{
-		std::cerr << "The form is empty :/" << '\n';
-	}
-}
-
 Form::Form( std::string n, const int sg, const int eg ) 
 		: name(n), signed_(false), signGrade(sg), execGrade(eg)
 {
-	try
-	{
-		check_grades(sg, eg);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	check_grades(sg, eg);
 }
 
 Form::Form( const Form &old )
 		: name(old.name), signed_(old.signed_), signGrade(old.signGrade), execGrade(old.execGrade)
 {
-	try
-	{
-		check_grades(signGrade, execGrade);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	check_grades(signGrade, execGrade);
 }
 
 Form	&Form::operator=( const Form &old )
