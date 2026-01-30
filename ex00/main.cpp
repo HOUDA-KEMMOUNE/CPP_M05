@@ -13,11 +13,6 @@ int	main()
 		std::cout << slave2 << std::endl;
 		slave2.decrement_grade();
 		std::cout << slave2 << std::endl;
-		for(int i = 0; i < 150; i++)
-			slave2.increment_grade();
-		std::cout << slave2 << std::endl;
-			slave2.increment_grade();
-		std::cout << slave2 << std::endl;
 	}
 	catch(const std::exception& e)
 	{

@@ -88,7 +88,7 @@ void	Bureaucrat::increment_grade( void )
 
 void	Bureaucrat::decrement_grade( void )
 {
-	if (grade <= 150)	
+	if (grade <= 150)
 		grade++;
 	try
 	{
