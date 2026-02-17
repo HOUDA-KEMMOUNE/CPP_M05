@@ -84,7 +84,7 @@ void				Form::beSigned( const Bureaucrat &slave )
 
 std::ostream	&operator<<( std::ostream &out, const Form &form )
 {
-	out << "Form " << form.getName() << " | signed: ";
+	out << "Form: " << form.getName() << " | signed: ";
 	if (form.getSign() == true)
 		out << "yes";
 	else
