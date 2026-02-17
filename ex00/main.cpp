@@ -4,7 +4,7 @@ int	main()
 {
 	try
 	{
-		Bureaucrat	slave2(150, "slave");
+		Bureaucrat	slave2(15, "slave");
 
 		std::cout << slave2 << std::endl;
 		slave2.decrement_grade();
