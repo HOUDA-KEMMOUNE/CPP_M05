@@ -3,13 +3,13 @@
 
 
 RobotomyRequestForm::RobotomyRequestForm( const std::string &t )
-: AForm("RobotomyRequestForm", 25, 5)
+: AForm("RobotomyRequestForm", 145, 45)
 {
 	target = t;
 }
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm &old )
-: AForm("RobotomyRequestForm", 25, 5)
+: AForm("RobotomyRequestForm", 145, 45)
 {
 	*this = old;
 }

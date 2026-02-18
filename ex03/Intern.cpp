@@ -4,25 +4,13 @@ Intern::Intern( void ) {}
 
 Intern::Intern( const Intern &old ) 
 {
-	*this = old;
+	(void)old;
 }
 
 Intern	&Intern::operator=( const Intern &old ) 
 {
 	(void)old;
 	return (*this);
-}
-
-int		form_fun( std::string name, std::string arr[3] )
-{
-	int	i = 0;
-	while (i < 3)
-	{
-		if (name == arr[i])
-			return (i);
-		i++;
-	}
-	return (1);
 }
 
 AForm	*create_PresidentialPardonForm(const std::string &target)
@@ -54,7 +42,6 @@ AForm	*Intern::makeForm( const std::string &name, const std::string &target )
 	int			i = 0;
 	int			res = 0;
 
-	// res = form_fun(name, arr);
 	while (i <= res)
 	{
 		if (name == arr[i])

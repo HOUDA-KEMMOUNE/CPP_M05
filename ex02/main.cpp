@@ -8,7 +8,6 @@ int	main()
 {
 	try
 	{
-		srand(time(NULL));
 		Bureaucrat	slave(1, "Slave");
 		ShrubberyCreationForm	tree("Home");
 		RobotomyRequestForm		robot("Forest");

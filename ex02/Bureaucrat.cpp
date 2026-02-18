@@ -80,28 +80,14 @@ void	Bureaucrat::increment_grade( void )
 {
 	if (grade >= 1)	
 		grade--;
-	try
-	{
-		check_grade(grade);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	check_grade(grade);
 }
 
 void	Bureaucrat::decrement_grade( void )
 {
 	if (grade <= 150)	
 		grade++;
-	try
-	{
-		check_grade(grade);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	check_grade(grade);
 }
 
 void	Bureaucrat::signForm( AForm &form )
