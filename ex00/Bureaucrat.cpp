@@ -23,13 +23,12 @@ Bureaucrat::Bureaucrat( int grade_, std::string name_) : name(name_)
 	grade = grade_;
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat &old )
+Bureaucrat::Bureaucrat( const Bureaucrat &old ) : name(old.name), grade(old.grade)
 {
 	if (old.grade <= 0)
 		throw	Bureaucrat::GradeTooHighException();
 	else if (grade > 150)
 		throw	Bureaucrat::GradeTooLowException();
-	*this = old;
 }
 
 Bureaucrat	&Bureaucrat::operator=( const Bureaucrat &old )
@@ -76,28 +75,14 @@ void	Bureaucrat::increment_grade( void )
 {
 	if (grade >= 1)	
 		grade--;
-	try
-	{
-		check_grade(grade);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	check_grade(grade);
 }
 
 void	Bureaucrat::decrement_grade( void )
 {
 	if (grade <= 150)
 		grade++;
-	try
-	{
-		check_grade(grade);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	check_grade(grade);
 }
 
 Bureaucrat::~Bureaucrat( void ) {}
