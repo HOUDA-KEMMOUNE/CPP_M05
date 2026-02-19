@@ -3,13 +3,13 @@
 
 
 RobotomyRequestForm::RobotomyRequestForm( const std::string &t )
-: AForm("RobotomyRequestForm", 145, 45)
+: AForm("RobotomyRequestForm", 72, 45)
 {
 	target = t;
 }
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm &old )
-: AForm("RobotomyRequestForm", 145, 45)
+: AForm("RobotomyRequestForm", 72, 45)
 {
 	*this = old;
 }
@@ -29,6 +29,7 @@ void		RobotomyRequestForm::execute( const Bureaucrat &executor ) const
 		throw	AForm::GradeTooLowException();
 
 	std::cout << "Drilling noises...\n";
+	srand(time(NULL));
 	int		r = rand();
 	if (r % 2 == 0)
 		std::cout << target << " has been robotomized successfully\n";

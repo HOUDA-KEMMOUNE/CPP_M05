@@ -2,11 +2,9 @@ NAME = Form
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC =  $(shell ls | grep '\.cpp')
-# SRC =  AForm.cpp Bureaucrat.cpp main.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 OBJ = $(SRC:.cpp=.o)
 
-all: $(NAME) clean
-	@./$(NAME)
+all: $(NAME)
 
 %.o: %.cpp
 	@$(CPP) $(CPPFLAGS) -c $< -o $@
@@ -15,7 +13,7 @@ $(NAME): $(OBJ)
 	@$(CPP) $(CPPFLAGS) $(OBJ) -o $@
 
 clean:
-	@rm -rf $(OBJ) && clear
+	@rm -rf $(OBJ)
 
 fclean: clean
 	@rm -rf $(NAME)

@@ -6,7 +6,7 @@ int main()
 {
     try
     {
-        Bureaucrat  alice(40, "Alice");
+        Bureaucrat  alice(50, "Alice");
         Form        taxForm("Tax Form", 50, 30);
 
         std::cout << alice << std::endl;
